@@ -1,0 +1,9 @@
+Transaction_ID,Date,Customer_Name,Product,Total_Items,Total_Cost,Payment_Method,City,Store_Type,Discount_Applied,Customer_Category,Season,Promotion
+1000000000.302,2020-12-21 19:42,Cheyenne Newman,["Hair Gel"],6,12.77,Debit Card,New York,Convenience Store,TRUE,Student,Winter,None
+1000000001.00,2020-07-06 7:45,Emily Fitzgerald,"['Tuna', 'Bread', 'Tissues', 'Trash Bags']",5,13.88,Debit Card,Houston,Supermarket,FALSE,Professional,Fall,BOGO (Buy One Get One)
+1000000002.00,2021-10-02 6:28,Michael Webb,"['Jam', 'Soap', 'Ketchup']",7,47.02,Debit Card,Miami,Convenience Store,FALSE,Young Adult,Winter,None
+1000000003.00,2022-01-10 5:39,Kimberly Lin,['BBQ Sauce'],9,83.86,Mobile Payment,Seattle,Warehouse Club,TRUE,Senior Citizen,Summer,Discount on Selected Items
+1000000004.00,2021-10-13 7:28,Cathy Hernandez,"['Hand Sanitizer', 'Bread', 'Extension Cords', 'Ice Cream', 'Hand Sanitizer']",4,30.55,Debit Card,Houston,Warehouse Club,FALSE,Senior Citizen,Spring,None
+1000000005.00,2021-04-26 20:45,Elizabeth Cook,"['Shower Gel', 'Baby Wipes', 'Banana', 'Paper Towels']",10,30.19,Debit Card,Atlanta,Supermarket,TRUE,Teenager,Summer,None
+1000000006.00,2023-10-07 23:36,Kara Bradley,"['Cereal', 'Tuna']",3,5.57,Mobile Payment,Boston,Warehouse Club,TRUE,Student,Winter,Discount on Selected Items
+1000000006.20,2023-10-07 23:36,Kara Bradley,"['Cereal', 'Tuna']",3,5.57,Mobile Payment,Boston,Warehouse Club,TRUE,Student,Winter,Discount on Selected Items
