@@ -80,32 +80,3 @@ if __name__ == "__main__":
     profile = ProfileReport(df, title="Profiling Report")
 
     profile.to_file("profiling_report.html")
-    '''
-    if df is not None:
-        print(f"Structure of the input dataset is: {df.columns}")
-
-        # Create a profile report
-        profile = ProfileReport(df, title="Profiling Report")
-
-        # Generate the report
-        profile.to_file("data_profile_report_before_cleaning.html")
-
-        # Clean the input data
-        cleaned_df = clean_input_data(df)
-
-        if cleaned_df is not None:
-            print(f"Structure of the cleaned dataset is: {cleaned_df.columns}")
-
-            # Infer the schema for cleaned data
-            schema = infer_schema(cleaned_df)
-            if schema is not None:
-                print("Inferred Schema:")
-                for column, dtype in schema.items():
-                    print(f"{column}: {dtype}")
-            else:
-                print("Schema inference failed.")
-        else:
-            print("Data cleaning failed.")
-    else:
-        print("Data was not loaded successfully.")
-    '''
