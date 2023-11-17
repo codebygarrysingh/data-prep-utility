@@ -145,7 +145,7 @@ def check_categorical_data(df: DataFrame):
         is_categorical_data = ''
         data_categories = []
 
-        if infer_data_type[column]['infered_data_type'] == 'str':
+        if infer_data_type[column]['inferred_data_type'] == 'str':
             if data_spread_results[column]['spread_percentage'] < threshold_percentage:
                 is_categorical_data = 'Yes'
                 data_categories = list(data_spread_results[column]['spread_pattern'].keys())
@@ -164,7 +164,7 @@ def check_categorical_data(df: DataFrame):
 
 def calculate_correlation_matrix(df: DataFrame):
     """
-    Calculate the correlation matrix for a given DataFrame.
+    Calculate the correlation matrix for numeric columns in a given DataFrame.
 
     Args:
         df (DataFrame): The input DataFrame.
@@ -172,8 +172,11 @@ def calculate_correlation_matrix(df: DataFrame):
     Returns:
         DataFrame: A Pandas DataFrame representing the correlation matrix.
     """
+    # Select only numeric columns
+    numeric_df = df.select_dtypes(include=['number'])
+
     # Using the corr method to calculate the correlation matrix
-    correlation_matrix = df.corr()
+    correlation_matrix = numeric_df.corr()
 
     return correlation_matrix
 
