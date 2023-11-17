@@ -54,8 +54,13 @@ def infer_data_types(df: DataFrame):
             - 'original_data_type': The original data type detected by Pandas.
             - 'inferred_data_type': The inferred actual data type after analysis.
     """
+def infer_data_types(df: DataFrame):
     data_types = df.dtypes.to_dict()
-    inferred_data_types = {}
+
+    # Dictionary to store actual data types for columns with 'object' data type
+    actual_types = {}
+
+    infer_data_type = {}
 
     for column, dtype in data_types.items():
         if dtype == 'object':
@@ -63,27 +68,30 @@ def infer_data_types(df: DataFrame):
             try:
                 # Try converting to numeric
                 actual_data_type = pd.to_numeric(df[column]).dtype
+                actual_types[column] = str(actual_data_type)
             except ValueError:
                 try:
                     # Try converting to datetime
                     actual_data_type = pd.to_datetime(df[column]).dtype
+                    actual_types[column] = str(actual_data_type)
                 except ValueError:
                     try:
                         # Try converting to boolean
-                        actual_data_type = 'bool' if pd.to_numeric(df[column].astype(str), errors='coerce').notna().all() else 'str'
+                        actual_data_type = pd.to_numeric(df[column].astype(str), errors='coerce').notna().all()
+                        actual_types[column] = 'bool' if actual_data_type else 'str'
                     except ValueError:
                         # Unable to infer the actual data type
-                        actual_data_type = 'str'
+                        actual_types[column] = 'str'
         else:
             # For all other data types, use the detected data type
-            actual_data_type = dtype
+            actual_types[column] = str(dtype)
 
-        inferred_data_types[column] = {
-            "original_data_type": str(dtype),
-            "inferred_data_type": str(actual_data_type)
+        infer_data_type[column] = {
+            "original_data_type": data_types[column],
+            "inferred_data_type": actual_types[column]
         }
 
-    return inferred_data_types
+    return infer_data_type
 
 # Example usage:
 # inferred_types = infer_data_types(df)

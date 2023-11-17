@@ -4,8 +4,8 @@
 
 # Import necessary libraries
 from pandas import DataFrame
-import pandas as pd
-from data-prep-utility.utils.data_profiling_util import check_data_completeness, check_data_spread, check_data_uniqueness, check_categorical_data, calculate_correlation_matrix
+from data_read_util import infer_data_types
+from data_profiling_util import check_data_completeness, check_data_spread, check_data_uniqueness, check_categorical_data, calculate_correlation_matrix
 
 # Create a sample DataFrame
 data = {
